@@ -3,6 +3,8 @@ const fs = require('fs');
 const { LogoShape, CircleShape, SquareShape, TriangleShape, DiamondShape } = require('./lib/shapes');
 const generateSvg = require('./lib/generateSvg');
 
+// Inquirer prompts to ask the user questions about their logo
+
 inquirer
   .prompt([
     {
