@@ -39,7 +39,7 @@ inquirer
     }
   ])
   .then((answers) => {
-    const outputFilePath = './dist/lib/my-logo.svg';
+    const outputFilePath = './examples/logo.svg';
 
     // Determine the shape class to use based on user selection
     let shapeClass;
@@ -68,10 +68,10 @@ inquirer
     });
 
     // Generate the svg logo here.
-    fs.mkdir('./dist/lib', { recursive: true }, (err) => {
+    fs.mkdir('./examples', { recursive: true }, (err) => {
       if (err) throw err;
       fs.writeFile(outputFilePath, generateSvg(logoShape), (err) =>
-        err ? console.error(err) : console.log(`Successfully generated ${outputFilePath}`)
+        err ? console.error(err) : console.log(`Generated ${outputFilePath}`)
       );
     });
   })
