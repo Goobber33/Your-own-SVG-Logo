@@ -60,13 +60,13 @@ describe('generateSvg', () => {
     expect(svg).toMatch(`stroke="${triangleShape.textColor}"`);
   });
 
-  // Test that a diamond logo SVG is generated correctly.
-  test('should generate a diamond logo svg', () => {
-    const diamondShape = new DShape({ logoText: 'ABC', textColor: 'red', bgColor: 'white' });
-    const svg = generateSvg(diamondShape);
-    expect(svg).toMatch('<polygon');
-    expect(svg).toMatch('points="50,5 95,50 50,95 5,50"');
-    expect(svg).toMatch(fill = "${diamondShape.bgColor}");
-    expect(svg).toMatch(stroke = "${diamondShape.textColor}");
-  });
+// Test that a diamond logo SVG is generated correctly.
+test('should generate a diamond logo svg', () => {
+  const diamondShape = new DShape({ logoText: 'ABC', textColor: 'red', bgColor: 'white' });
+  const svg = generateSvg(diamondShape);
+  expect(svg).toMatch('<polygon');
+  expect(svg).toMatch('points="50,5 95,50 50,95 5,50"');
+  expect(svg).toMatch(`fill="${diamondShape.bgColor}"`); // Modified line
+  expect(svg).toMatch(`stroke="${diamondShape.textColor}"`);
+});
 });
