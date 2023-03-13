@@ -60,4 +60,9 @@ inquirer
         throw new Error('Invalid shape selected');
     }
 
-  });
+    // Create a new instance of the selected shape class
+    const logoShape = new shapeClass({
+      logoText: answers.logoText,
+      textColor: answers.textColor,
+      bgColor: answers.bgColor
+    });
