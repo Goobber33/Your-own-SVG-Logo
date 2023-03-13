@@ -38,3 +38,26 @@ inquirer
       ]
     }
   ])
+  .then((answers) => {
+    const outputFilePath = './dist/lib/my-logo.svg';
+
+    // Determine the shape class to use based on user selection
+    let shapeClass;
+    switch (answers.logoShape) {
+      case 'circle':
+        shapeClass = CircleShape;
+        break;
+      case 'square':
+        shapeClass = SquareShape;
+        break;
+      case 'triangle':
+        shapeClass = TriangleShape;
+        break;
+      case 'diamond':
+        shapeClass = DiamondShape;
+        break;
+      default:
+        throw new Error('Invalid shape selected');
+    }
+
+  });
