@@ -36,7 +36,6 @@ inquirer
         'circle',
         'square',
         'triangle',
-        'diamond'
       ]
     }
   ])
