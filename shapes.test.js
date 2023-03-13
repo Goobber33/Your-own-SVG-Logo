@@ -21,3 +21,13 @@ describe('LogoShape', () => {
   });
 });
 
+describe('generateSvg', () => {
+  test('should generate a circle logo svg', () => {
+    const circleShape = new CShape({ logoText: 'ABC', textColor: 'red', bgColor: 'white' });
+    const svg = generateSvg(circleShape);
+    expect(svg).toMatch('<circle');
+    expect(svg).toMatch('cx="50" cy="50" r="40"');
+    expect(svg).toMatch(`fill="${circleShape.bgColor}"`);
+    expect(svg).toMatch(`stroke="${circleShape.textColor}"`);
+  });
+});
