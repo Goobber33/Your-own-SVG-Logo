@@ -66,3 +66,13 @@ inquirer
       textColor: answers.textColor,
       bgColor: answers.bgColor
     });
+
+    // Generate the svg logo here.
+    fs.mkdir('./dist/lib', { recursive: true }, (err) => {
+      if (err) throw err;
+      fs.writeFile(outputFilePath, generateSvg(logoShape), (err) =>
+        err ? console.error(err) : console.log(`Successfully generated ${outputFilePath}`)
+      );
+    });
+  })
+  .catch((err) => console.error(err));
